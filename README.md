@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-Hi I'm David I'm a Scala backend engineer, passionate about Functional Programming and volunteer firefighter in the spare time.
+Hi I'm David, I'm a Scala backend engineer, passionate about Functional Programming and volunteer firefighter in the spare time.
 
 - [fly4s](https://github.com/geirolz/fly4s) A lightweight, simple and functional wrapper for Flyway using cats effect.
 - [cats-xml](https://github.com/geirolz/cats-xml) A functional library to work with XML in Scala using Cats.
