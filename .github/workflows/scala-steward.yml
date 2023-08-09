@@ -119,7 +119,7 @@ jobs:
           # This input will be ignored if the `github-app-*`
           # inputs are provided and `github-app-auth-only` is
           # not `true`.
-          repos-file: './.github/scala-steward-repos.md'
+          repos-file: "${{GITHUB_WORKSPACE}}/.github/scala-steward-repos.md"
 
           # Scala Steward version to use. If not provided it
           # will use the last one published.
