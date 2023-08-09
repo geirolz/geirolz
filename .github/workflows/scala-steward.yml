@@ -67,7 +67,7 @@ jobs:
           # the `repos-file` or the `github-repository` inputs.
           #
           # Default: false
-          #github-app-auth-only: ''
+          github-app-auth-only: true
 
           # Repository to update. Will be ignored if either
           # `repos-file` is provided or the `github-app-*`
