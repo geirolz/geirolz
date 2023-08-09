@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-22.04
     name: Launch Scala Steward
     steps:
-      - run: ls -la
-        working-directory: ${{ github.workspace }}
+      - name: Print current working dir
+        run: |
+          ls -la $PWD
+          ls -la $GITHUB_WORKSPACE
       - name: Launch Scala Steward
         uses: scala-steward-org/scala-steward-action@v2
         with:
