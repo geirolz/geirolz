@@ -13,8 +13,7 @@ jobs:
     steps:
       - name: Print current working dir
         run: |
-          ls -la $PWD
-          ls -la $GITHUB_WORKSPACE
+          ls -la ${{github.workspace}}
       - name: Launch Scala Steward
         uses: scala-steward-org/scala-steward-action@v2
         with:
