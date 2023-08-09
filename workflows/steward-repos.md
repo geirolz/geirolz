@@ -1,0 +1,7 @@
+- geirolz/toolkit
+- geirolz/fly4s
+- geirolz/cats-xml
+- geirolz/scope
+- geirolz/erules
+- geirolz/fp-microservice
+- geirolz/fluent-copy
