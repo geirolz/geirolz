@@ -12,6 +12,7 @@ jobs:
     name: Launch Scala Steward
     steps:
       - name: Print current working dir
+        uses: actions/checkout@v2
         run: |
           ls -la ${{github.workspace}}
       - name: Launch Scala Steward
