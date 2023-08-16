@@ -6,8 +6,8 @@ Full guide here: [sbt-ci-release](https://github.com/olafurpg/sbt-ci-release)
 gpg --gen-key
 ```
 **Data**
-- name: `$PRJ_NAME-release-bot`
-- email: use your own email address
+- Real name: `$PRJ_NAME-release-bot`
+- Email: use your own email address
 - For passphrase, generate a random password with a password manager
 
 **Result**
@@ -64,14 +64,25 @@ gpg --armor --export $LONG_ID > $PRJ_NAME-release-bot-public.gpg
 # Windows
 gpg --armor --export %LONG_ID% > %PRJ_NAME%-release-bot-public.gpg
 ```
+### 4. Public the public key to keyserver
+Copy the **PUBLIC KEY** and publish it in a public keyserver
 
-### 4. Export private key in base64
+Like this one:
+[https://keyserver.ubuntu.com/](https://keyserver.ubuntu.com/)
+
+### 5. Export private key in base64
 **Clipboard**
-```
+```shell
 # macOS
 gpg --armor --export-secret-keys $LONG_ID | base64 | pbcopy
+```
+
+```shell
 # Ubuntu (assuming GNU base64)
 gpg --armor --export-secret-keys $LONG_ID | base64 -w0 | xclip
+```
+
+```shell
 # Windows
 gpg --armor --export-secret-keys %LONG_ID% | openssl base64
 ```
@@ -91,12 +102,6 @@ gpg --armor --export-secret-keys $LONG_ID | base64 -w0 > $PRJ_NAME-release-bot-p
 # Windows
 gpg --armor --export-secret-keys %LONG_ID% | openssl base64 > %PRJ_NAME%-release-bot-private.gpg
 ```
-
-### 5. Public the public key to keyserver
-Copy the **PUBLIC KEY** and publish it in a public keyserver
-
-Like this one:
-[https://keyserver.ubuntu.com/](https://keyserver.ubuntu.com/)
 
 ### 6. Put the private key in Github secrets
 - Copy the **PRIVATE KEY** in _Base64_
