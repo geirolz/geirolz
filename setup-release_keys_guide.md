@@ -2,10 +2,10 @@
 Full guide here: [sbt-ci-release](https://github.com/olafurpg/sbt-ci-release)
 
 ### 1. Gen Key Pair
-```
+```shell
 gpg --gen-key
 ```
-**data**
+**Data**
 - name: `$PRJ_NAME-release-bot`
 - email: use your own email address
 - For passphrase, generate a random password with a password manager
@@ -19,40 +19,54 @@ uid                      $PRJ_NAME-release-bot bot <$EMAIL>
 
 ### 2. Set PRJ_NAME and LONG_ID
 
-**example**
-```
-//On UNIX
+**Example**
+```shell
+# UNIX
 PRJ_NAME=example-release-bot
 LONG_ID=6E8ED79B03AD527F1B281169D28FC818985732D9
+```
 
-//On Windows
+```shell
+# Windows
 set PRJ_NAME=example-release-bot
 set LONG_ID=6E8ED79B03AD527F1B281169D28FC818985732D9
 ```
 
 ### 3. Export public key
-**clipboard**
-```
+**Clipboard**
+```shell
 # macOS
 gpg --armor --export $LONG_ID | pbcopy
+```
+
+```shell
 # linux
 gpg --armor --export $LONG_ID | xclip
+```
+
+```shell
 # Windows
 gpg --armor --export %LONG_ID%
 ```
 
-**file**
-```
+**File**
+```shell
 # macOS
 gpg --armor --export $LONG_ID > $PRJ_NAME-release-bot-public.gpg
+```
+
+```shell
 # linux
 gpg --armor --export $LONG_ID > $PRJ_NAME-release-bot-public.gpg
+```
+
+```shell
 # Windows
 gpg --armor --export %LONG_ID% > %PRJ_NAME%-release-bot-public.gpg
 ```
 
 ### 4. Export private key in base64
-**clipboard**
+**Clipboard**
 ```
 # macOS
 gpg --armor --export-secret-keys $LONG_ID | base64 | pbcopy
@@ -62,12 +76,18 @@ gpg --armor --export-secret-keys $LONG_ID | base64 -w0 | xclip
 gpg --armor --export-secret-keys %LONG_ID% | openssl base64
 ```
 
-**file**
-```
+**File**
+```shell
 # macOS
 gpg --armor --export-secret-keys $LONG_ID | base64 > $PRJ_NAME-release-bot-private.gpg
+```
+
+```shell
 # Ubuntu (assuming GNU base64)
 gpg --armor --export-secret-keys $LONG_ID | base64 -w0 > $PRJ_NAME-release-bot-private.gpg
+```
+
+```shell
 # Windows
 gpg --armor --export-secret-keys %LONG_ID% | openssl base64 > %PRJ_NAME%-release-bot-private.gpg
 ```
