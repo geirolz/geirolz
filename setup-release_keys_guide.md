@@ -20,48 +20,51 @@ uid                      $PRJ_NAME-release-bot bot <$EMAIL>
 ### 2. Set PRJ_NAME and LONG_ID
 
 **Example**
+
+#### UNIX
 ```shell
-# UNIX
 PRJ_NAME=example-release-bot
 LONG_ID=6E8ED79B03AD527F1B281169D28FC818985732D9
 ```
 
+#### Windows
 ```shell
-# Windows
 set PRJ_NAME=example-release-bot
 set LONG_ID=6E8ED79B03AD527F1B281169D28FC818985732D9
 ```
 
 ### 3. Export public key
+
+#### macOS
 **Clipboard**
 ```shell
-# macOS
 gpg --armor --export $LONG_ID | pbcopy
 ```
 
+#### linux
 ```shell
-# linux
 gpg --armor --export $LONG_ID | xclip
 ```
 
+#### Windows
 ```shell
-# Windows
 gpg --armor --export %LONG_ID%
 ```
 
 **File**
+
+#### macOS
 ```shell
-# macOS
 gpg --armor --export $LONG_ID > $PRJ_NAME-release-bot-public.gpg
 ```
 
+#### linux
 ```shell
-# linux
 gpg --armor --export $LONG_ID > $PRJ_NAME-release-bot-public.gpg
 ```
 
+#### Windows
 ```shell
-# Windows
 gpg --armor --export %LONG_ID% > %PRJ_NAME%-release-bot-public.gpg
 ```
 ### 4. Public the public key to keyserver
@@ -72,34 +75,36 @@ Like this one:
 
 ### 5. Export private key in base64
 **Clipboard**
+
+#### macOS
 ```shell
-# macOS
 gpg --armor --export-secret-keys $LONG_ID | base64 | pbcopy
 ```
 
+#### Ubuntu (assuming GNU base64)
 ```shell
-# Ubuntu (assuming GNU base64)
 gpg --armor --export-secret-keys $LONG_ID | base64 -w0 | xclip
 ```
 
+#### Windows
 ```shell
-# Windows
 gpg --armor --export-secret-keys %LONG_ID% | openssl base64
 ```
 
 **File**
+
+#### macOS
 ```shell
-# macOS
 gpg --armor --export-secret-keys $LONG_ID | base64 > $PRJ_NAME-release-bot-private.gpg
 ```
 
+#### Ubuntu (assuming GNU base64)
 ```shell
-# Ubuntu (assuming GNU base64)
 gpg --armor --export-secret-keys $LONG_ID | base64 -w0 > $PRJ_NAME-release-bot-private.gpg
 ```
 
+#### Windows
 ```shell
-# Windows
 gpg --armor --export-secret-keys %LONG_ID% | openssl base64 > %PRJ_NAME%-release-bot-private.gpg
 ```
 
