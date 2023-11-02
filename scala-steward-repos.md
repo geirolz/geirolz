@@ -5,3 +5,4 @@
 - geirolz/erules
 - geirolz/fp-microservice
 - geirolz/fluent-copy
+- geirolz/sbt-service-info
