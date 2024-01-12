@@ -13,6 +13,7 @@ My projects (please, drop a ⭐️ if you want to support me) :
 - [cats-xml](https://github.com/geirolz/cats-xml) A functional library to work with XML in Scala using Cats.
 - [scope](https://github.com/geirolz/scope) A functional, compile-time and type-safe models layer separator.
 - [erules](https://github.com/geirolz/erules) A simple purely functional engine to evaluate rules.
+- [secret](https://github.com/geirolz/secret) A functional, type-safe and memory-safe class to handle secret values
 - [fp-microservice](https://github.com/geirolz/fp-microservice) A purely functional microservice template in Scala.
 - [fluent-copy](https://github.com/geirolz/fluent-copy) Scala 2 macros to have fluent copy on case classes.
 - [sbt-service-info](https://github.com/geirolz/sbt-service-info) A small companion of sbt-buildinfo to add more service-specific informations.
