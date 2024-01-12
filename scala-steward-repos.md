@@ -1,4 +1,5 @@
 - geirolz/toolkit
+- geirolz/secret
 - geirolz/fly4s
 - geirolz/cats-xml
 - geirolz/scope
