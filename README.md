@@ -4,7 +4,13 @@ Hi I'm David, I'm a Scala backend engineer and a volunteer firefighter in the sp
 I love Functional Programming, I do climbing, mountaineering and photography. 
 Passionate about space exploration, innovations and technologies 🚀
 
-![Geirolz's github stats](https://github-readme-stats.vercel.app/api?username=geirolz&count_private=true&show_icons=true&theme=codeSTACKr)
+<picture>
+  <source
+    srcset="https://github-readme-stats.vercel.app/api?username=geirolz&count_private=true&show_icons=true&theme=ambient_gradient"
+    media="(prefers-color-scheme: dark)"
+  />
+  <img src="https://github-readme-stats.vercel.app/api?username=geirolz&count_private=true&show_icons=true&theme=ambient_gradient" />
+</picture>
 
 ---
 My projects (please, drop a ⭐️ if you want to support me) :
