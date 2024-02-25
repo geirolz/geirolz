@@ -8,3 +8,4 @@
 - geirolz/fluent-copy
 - geirolz/sbt-service-info
 - geirolz/advxml
+- geirolz/git4s
