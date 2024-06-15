@@ -1,8 +1,10 @@
 ### Hi there 👋
 
-Hi I'm David, I'm a Scala backend engineer and a volunteer firefighter in the spare time.
+Hi I'm David, I'm a freelance Scala backend engineer and a volunteer firefighter in the spare time.
 I love Functional Programming, I do climbing, mountaineering and photography. 
 Passionate about space exploration, innovations and technologies 🚀
+
+I am also available to write libraries for your company leveraging my experiences with business and opensource, contact me! 
 
 <picture>
   <source
