@@ -1,7 +1,7 @@
 # How to setup release keys
 Full guide here: [sbt-ci-release](https://github.com/olafurpg/sbt-ci-release)
 
-### 1. Gen Key Pair
+## 1. Gen Key Pair
 ```shell
 gpg --gen-key
 ```
@@ -17,98 +17,76 @@ pub   rsa2048 2018-06-10 [SC] [expires: 2020-06-09]
 uid                      $PRJ_NAME-release-bot bot <$EMAIL>
 ```
 
-### 2. Set PRJ_NAME and LONG_ID
+## 2. Set PRJ_NAME and LONG_ID
 
-**Example**
-
-#### UNIX
 ```shell
+# macOS / UNIX
 PRJ_NAME=example-release-bot
 LONG_ID=6E8ED79B03AD527F1B281169D28FC818985732D9
-```
 
-#### Windows
-```shell
+# Windows
 set PRJ_NAME=example-release-bot
 set LONG_ID=6E8ED79B03AD527F1B281169D28FC818985732D9
 ```
 
-### 3. Export public key
+## 3. Export public key
 
-#### macOS
-**Clipboard**
+### Clipboard
+
 ```shell
+# macOS
 gpg --armor --export $LONG_ID | pbcopy
-```
-
-#### linux
-```shell
+# linux
 gpg --armor --export $LONG_ID | xclip
-```
-
-#### Windows
-```shell
+# Windows
 gpg --armor --export %LONG_ID%
 ```
 
-**File**
+### File
 
-#### macOS
 ```shell
+# macOS
 gpg --armor --export $LONG_ID > $PRJ_NAME-release-bot-public.gpg
-```
-
-#### linux
-```shell
+# linux
 gpg --armor --export $LONG_ID > $PRJ_NAME-release-bot-public.gpg
-```
-
-#### Windows
-```shell
+# Windows
 gpg --armor --export %LONG_ID% > %PRJ_NAME%-release-bot-public.gpg
 ```
-### 4. Public the public key to keyserver
-Copy the **PUBLIC KEY** and publish it in a public keyserver
 
-Like this one:
+## 4. Public the public key to keyserver
+
+```shell
+gpg --keyserver keys.openpgp.org --send-keys $LONG_ID
+```
+
+Or manually copying the **PUBLIC KEY** and publish it in a public keyserver here:
 [https://keyserver.ubuntu.com/](https://keyserver.ubuntu.com/)
 
-### 5. Export private key in base64
-**Clipboard**
+## 5. Export private key in base64
 
-#### macOS
+### Clipboard
+
 ```shell
+# macOS
 gpg --armor --export-secret-keys $LONG_ID | base64 | pbcopy
-```
-
-#### Ubuntu (assuming GNU base64)
-```shell
+# Ubuntu (assuming GNU base64)
 gpg --armor --export-secret-keys $LONG_ID | base64 -w0 | xclip
-```
-
-#### Windows
-```shell
+# Windows
 gpg --armor --export-secret-keys %LONG_ID% | openssl base64
 ```
 
-**File**
+### File
 
-#### macOS
 ```shell
+# macOS
 gpg --armor --export-secret-keys $LONG_ID | base64 > $PRJ_NAME-release-bot-private.gpg
-```
-
-#### Ubuntu (assuming GNU base64)
-```shell
+# Ubuntu (assuming GNU base64)
 gpg --armor --export-secret-keys $LONG_ID | base64 -w0 > $PRJ_NAME-release-bot-private.gpg
-```
-
-#### Windows
-```shell
+# Windows
 gpg --armor --export-secret-keys %LONG_ID% | openssl base64 > %PRJ_NAME%-release-bot-private.gpg
 ```
 
-### 6. Put the private key in Github secrets
+## 6. Put the private key in Github secrets
 - Copy the **PRIVATE KEY** in _Base64_
 - Create a secret in github named `PGP_SECRET` and store the base64 *PRIVATE KEY*
 - Create a secret in github named `PGP_PASSPHRASE` and store the base64 *PRIVATE KEY* passphrase
